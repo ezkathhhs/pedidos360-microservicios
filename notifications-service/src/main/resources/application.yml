@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        acknowledge-mode: manual # Exigencia de la rúbrica para manejo explícito
+        
+# Centralización de nombres de colas
+app:
+  queue:
+    notificaciones: notificaciones.queue
